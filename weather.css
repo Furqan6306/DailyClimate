@@ -1,0 +1,120 @@
+/* Body & Page Styling */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #2980b9, #6dd5fa);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  transition: background 1s ease-in-out;
+}
+
+/* Container Box */
+.container {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  width: 320px;
+  text-align: center;
+  transform: translateY(20px);
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Search Box */
+.search-box {
+  margin-bottom: 1rem;
+}
+
+input[type="text"] {
+  width: 70%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  transition: border 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #0077ff;
+  outline: none;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #0077ff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #005fcc;
+  transform: scale(1.05);
+}
+
+/* Weather Result Card */
+.weather-card {
+  margin-top: 1rem;
+  text-align: left;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.weather-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Weather Icon */
+img {
+  width: 64px;
+  height: 64px;
+  margin-top: 10px;
+  transition: transform 0.5s ease;
+}
+
+img:hover {
+  transform: rotate(10deg) scale(1.1);
+}
+
+/* Spinner */
+.loader {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #0077ff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 1rem auto;
+  animation: spin 1s linear infinite;
+  display: none;
+}
+
+.loader.show {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Animations */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
